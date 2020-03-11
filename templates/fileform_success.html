@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+    </head>
+    <body>
+    DOBRY
+
+    <input type="button" value="Go back!" onclick="history.back()">
+
+    <div>
+        <p class="text"> Stiskem tlačítka Do toho! proběhne transformace souboru na .csv, který se následně automaticky stáhne do Downloads. </p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <img src="/static/greatday.jpg" alt="Flowers in Chania">
+    </div>
+
+    </body>
+</html>
